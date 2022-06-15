@@ -10,28 +10,28 @@ public class Person {
     private long id;
     @Column(name = "name")
     private String name;
+//    @Column(name = "template", length = 300000)
+//    private byte[] template;
+
     @Column(name = "template", length = 300000)
-    private byte[] template;
-
-//    @Column(name = "string_template", length = 300000)
-//    private String string_template;
-
-//    @Column(name = "length")
-//    private int length;
+    private String template;
+//
+    @Column(name = "length")
+    private int length;
 
     public Person() {
         super();
     }
 
     public Person(String name,
-                  byte[] template
-//                  String string_template,
-//                  int length
+//                  byte[] template
+                  String template,
+                  int length
     ) {
         this.name = name;
         this.template = template;
 //        this.string_template = string_template;
-//        this.length = length;
+        this.length = length;
     }
 
     public String getName() {
@@ -42,27 +42,27 @@ public class Person {
         this.name = name;
     }
 
-    public byte[] getTemplate() {
+//    public byte[] getTemplate() {
+//        return template;
+//    }
+//
+//    public void setTemplate(byte[] template) {
+//        this.template = template;
+//    }
+
+    public String getTemplate() {
         return template;
     }
-//
-    public void setTemplate(byte[] template) {
+
+    public void setTemplate(String template) {
         this.template = template;
     }
 
-//    public String getString_template() {
-//        return string_template;
-//    }
-
-//    public void setString_template(String string_template) {
-//        this.string_template = string_template;
-//    }
-
-//    public int getLength() {
-//        return length;
-//    }
+    public int getLength() {
+        return length;
+    }
 //
-//    public void setLength(int length) {
-//        this.length = length;
-//    }
+    public void setLength(int length) {
+        this.length = length;
+    }
 }
