@@ -20,7 +20,7 @@ public class PersonController {
 
     // create get all person api
     @GetMapping("/person")
-    public List<MemberData> getAllPerson(){
+    public List<MemberData> retrieveAllPerson(){
         List<MemberData> memberDataList = personRepository.findAll();
         return  memberDataList;
     }
