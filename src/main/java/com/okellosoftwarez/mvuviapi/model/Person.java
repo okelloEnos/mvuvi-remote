@@ -10,8 +10,6 @@ public class Person {
     private long id;
     @Column(name = "name")
     private String name;
-//    @Column(name = "template", length = 300000)
-//    private byte[] template;
 
     @Column(name = "template", length = 300000)
     private String template;
@@ -41,14 +39,6 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public byte[] getTemplate() {
-//        return template;
-//    }
-//
-//    public void setTemplate(byte[] template) {
-//        this.template = template;
-//    }
 
     public String getTemplate() {
         return template;
