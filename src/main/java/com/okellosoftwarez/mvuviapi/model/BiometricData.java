@@ -1,8 +1,11 @@
 package com.okellosoftwarez.mvuviapi.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
 
 @Entity
+@JsonSerialize
 public class BiometricData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +20,10 @@ public class BiometricData {
         private int length;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="idnumber")
+//    @ManyToOne(optional = false, fetch = FetchType.LAZY, cascade =
+//            CascadeType.REMOVE)
     private MemberData memberData;
         public BiometricData() {
             super();
@@ -58,4 +63,12 @@ public class BiometricData {
         }
 //    }
 
+
+    public MemberData getMemberData() {
+        return memberData;
+    }
+
+    public void setMemberData(MemberData memberData) {
+        this.memberData = memberData;
+    }
 }

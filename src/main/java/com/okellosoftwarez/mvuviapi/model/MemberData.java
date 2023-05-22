@@ -1,14 +1,18 @@
 package com.okellosoftwarez.mvuviapi.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table
+@JsonSerialize
 public class MemberData {
 
 @OneToMany(mappedBy = "memberData", cascade = CascadeType.ALL)
-            List<BiometricData> biometric_template;
+            List<BiometricData> biometric_template = new ArrayList<>();
             private String birth_date;
 
             private String bmu;
@@ -260,4 +264,6 @@ public class MemberData {
     public void setSubcounty(String subcounty) {
         this.subcounty = subcounty;
     }
+
+
 }
